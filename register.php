@@ -25,7 +25,6 @@ if (isset($_POST)) {
     }
 
     //Email ---------------------------
-
     if (empty($_POST['email']) ||
         !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
         $errors['email'] = "Veuillez entrer une adresse email valide";
@@ -36,6 +35,17 @@ if (isset($_POST)) {
         if ($user) {
             $errors['email'] = "Cet email existe déjà";
         }
+    }
+
+    //Password ---------------------------
+    if (empty($_POST['password']) ||
+        !preg_match(
+            "/[a-zA-Z0-9_]{8,}$/",
+            $_POST['password']
+        )) {
+        $errors['password'] = "Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule et un chiffre";
+    } elseif ($_POST['password'] !== $_POST['confirm_password']) {
+        $errors['confirm_password'] = "Les mots de passe ne correspondent pas";
     }
 }
 
@@ -57,14 +67,15 @@ if (!empty($errors)) {
             <div class="form-control">
                 <label for="username">Nom d'utilisateur</label>
                 <input type="text" id="username" placeholder="rostodev" name="username" autocomplete="off"
-                    value="">
+                    value="<?= isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?>">
+                    
 
             </div>
 
             <div class="form-control">
                 <label for="email">Email</label>
                 <input type="email" id="email" placeholder="rostodev@gmail.com" name="email"
-                    value="">
+                    value="<?= isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>"">
             </div>
 
             <div class="form-control">

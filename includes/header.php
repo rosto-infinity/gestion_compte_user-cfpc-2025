@@ -17,7 +17,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <body>
     <header>
         <div class="logo">
-            <h2><a href="index.php">Compte utilisateur</a></h2>
+            <h4><a style="color:white" href="index.php">Compte utilisateur</a></h4>
         </div>
         <nav>
             <ul>
@@ -29,5 +29,5 @@ if (session_status() == PHP_SESSION_NONE) {
 
     </header>
     <span>
-        <h1>Gestion des comptes utilisateurs</h1>
+        <h3>Gestion des comptes utilisateurs</h3>
     </span>

@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once './includes/database.php';
-require_once './includes/functions.php';
  ?>
 <?php require_once './includes/header.php'; ?>
 <div class=" content">

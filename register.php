@@ -2,13 +2,22 @@
 session_start();
 require_once('./includes/database.php');
 if($_POST){
+
+    $errrors =[];
 //   echo "<pre>";
 //     print_r($_POST);
 //   echo "</pre>";  
 
+//Username ---------------------------
+if(empty($_POST['username'] || 
+        !preg_match("/^[a-zA-Z0-9_]{3,20}$/",
+        $_POST['username']))){
 
+    $errors['username'] = "Veuillez entrer un nom d'utilisateur valide (3-20 caractères)";{
+
+        var_dump($errors['username']);
 }
-
+}
 
 ?>
 <?php require_once './includes/header.php'; ?>

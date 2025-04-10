@@ -1,6 +1,34 @@
 <?php
 session_start();
 require_once('./includes/database.php');
+  // 1Chiffres de 0 à 9
+  $chiffres = range(0, 9);
+       echo "<pre>";
+        print_r($chiffres);
+      echo "</pre>";  
+  // Lettres minuscules de a à z
+  $minuscules = range('a', 'z');
+  echo "<pre>";
+  print_r($minuscules);
+echo "</pre>";
+  // Lettres majuscules de A à Z
+  $majuscules = range('A', 'Z');
+  echo "<pre>";
+  print_r($majuscules);
+echo "</pre>";
+  // Combiner tous les éléments
+  $resultat = array_merge($chiffres, $minuscules, $majuscules);
+  
+  // Afficher le résultat
+  echo "<pre>";
+  print_r($resultat);
+  echo "</pre>";
+
+
+  $resultat2 = array_merge(range(0, 9), range('a', 'z'), range('A', 'Z'));
+  echo "<pre>";
+  print_r($resultat2);
+  echo "</pre>";
 if (isset($_POST)) {
     $errors = [];
     //   echo "<pre>";
@@ -56,8 +84,10 @@ if (isset($_POST)) {
             'email' => $_POST['email'],
             'password' => $password
         ]);
-        header('Location: login.php');
-        exit();
+      
+      
+        
+        
     }
 }
 ?>

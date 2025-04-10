@@ -16,7 +16,7 @@ echo "</pre>";
   echo "<pre>";
   print_r($majuscules);
 echo "</pre>";
-  // Combiner tous les éléments
+  // 4-Combiner tous les éléments
   $resultat = array_merge($chiffres, $minuscules, $majuscules);
   
   // Afficher le résultat

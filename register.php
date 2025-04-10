@@ -1,15 +1,16 @@
 <?php
 session_start();
 require_once('./includes/database.php');
+require_once('./includes/functions.php');
 
 // $chiffres = range(0, 9); // 1-Crée un tableau contenant les chiffres de 0 à 9
 // $minuscules = range('a', 'z'); // 2-Crée un tableau contenant les lettres minuscules de a à z
 // $majuscules = range('A', 'Z'); // 3-Crée un tableau contenant les lettres majuscules de A à Z
-
-echo '<pre>';
-print_r($token2);
-echo '</pre>';
-die();
+// $token=generateToken(100);
+// echo '<pre>';
+// print_r($token);
+// echo '</pre>';
+// die();
 
 // echo '<pre>';
 // print_r($minuscules);
@@ -56,7 +57,8 @@ if (isset($_POST)) {
         $email = $_POST['email'];
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
       
-
+        // Appelle la fonction generateToken pour générer un token aléatoire de 100 caractères
+        $token=generateToken(100);
         $query = $pdo->prepare("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)");
         
         // Exécution de la requête avec paramètres nommés

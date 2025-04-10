@@ -7,8 +7,9 @@ $minuscules = range('a', 'z'); // 2-Crée un tableau contenant les lettres minus
 $majuscules = range('A', 'Z'); // 3-Crée un tableau contenant les lettres majuscules de A à Z
 $alphanum= array_merge($chiffres, $minuscules, $majuscules); // 4-Fusionne les tableaux pour créer un tableau alphanumérique
 
+$alphanumString = implode('--', $alphanum); // 5-Concatène les éléments du tableau en une chaîne de caractères
 echo '<pre>';
-print_r($alphanum);
+print_r($alphanumString);
 echo '</pre>';
 
 // echo '<pre>';

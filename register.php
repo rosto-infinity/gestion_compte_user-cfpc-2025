@@ -27,10 +27,10 @@ require_once('./includes/database.php');
 /**
  * La fonction array_merge() en PHP a pour rôle de fusionner un ou plusieurs tableaux
  */
-  $resultat2 = array_merge(range(0, 9), range('a', 'z'), range('A', 'Z'));
-  echo "<pre>";
-  print_r($resultat2);
-  echo "</pre>";
+//   $resultat2 = array_merge(range(0, 9), range('a', 'z'), range('A', 'Z'));
+//   echo "<pre>";
+//   print_r($resultat2);
+//   echo "</pre>";
 if (isset($_POST)) {
     $errors = [];
     //   echo "<pre>";
@@ -81,14 +81,17 @@ if (isset($_POST)) {
     if (empty($errors)) {   
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
         $query = $pdo->prepare("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)");
-        $query->execute([
-            'username' => $_POST['username'],
-            'email' => $_POST['email'],
-            'password' => $password
-        ]);
+        // $query->execute([
+        //     'username' => $_POST['username'],
+        //     'email' => $_POST['email'],
+        //     'password' => $password
+        // ]);
       
-      
+        $alphanum = array_merge(range(0, 9), range('a', 'z'), range('A', 'Z'));
+        $alphanumString = implode('', $alphanum); // 7-Transforme le tableau en string
+        $token = str_repeat($alphanumString, 3); // Répète la chaîne 3 fois
         
+        var_dump($token);
         
     }
 }

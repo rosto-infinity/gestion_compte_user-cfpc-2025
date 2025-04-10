@@ -4,7 +4,7 @@ require_once('./includes/database.php');
 
 $chiffres = range(0, 9); // 1-Crée un tableau contenant les chiffres de 0 à 9
 $minuscules = range('a', 'z'); // 2-Crée un tableau contenant les lettres minuscules de a à z
-$majuscules = range('A', 'Z'); // Crée un tableau contenant les lettres majuscules de A à Z
+$majuscules = range('A', 'Z'); // 3-Crée un tableau contenant les lettres majuscules de A à Z
 echo '<pre>';
 print_r($chiffres);
 echo '</pre>';

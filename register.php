@@ -11,7 +11,7 @@ require_once('./includes/database.php');
   echo "<pre>";
   print_r($minuscules);
 echo "</pre>";
-  // 3Lettres majuscules de A à Z
+  // 3-Lettres majuscules de A à Z
   $majuscules = range('A', 'Z');
   echo "<pre>";
   print_r($majuscules);

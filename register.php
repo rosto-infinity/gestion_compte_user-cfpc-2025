@@ -89,7 +89,7 @@ if (isset($_POST)) {
       
         $alphanum = array_merge(range(0, 9), range('a', 'z'), range('A', 'Z'));
         $alphanumString = implode('', $alphanum); // 7-Transforme le tableau en string
-        $token = str_repeat($alphanumString, 3); // Répète la chaîne 3 fois
+        $token = str_repeat($alphanumString, 3); // 8-Répète la chaîne 3 fois
         
         var_dump($token);
         

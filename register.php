@@ -59,13 +59,14 @@ if (isset($_POST)) {
       
         // Appelle la fonction generateToken pour générer un token aléatoire de 100 caractères
         $token=generateToken(100);
-        $query = $pdo->prepare("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)");
+        $query = $pdo->prepare("INSERT INTO users (username, email, password, confirmation_token) VALUES (:username, :email, :password,:confirmation_token)");
         
-        // Exécution de la requête avec paramètres nommés
+        // 1-Exécution de la requête avec paramètres nommés
         $query->execute([
             'username' => $username,
             'email' => $email,
             'password' => $password,
+            'confirmation_token' => $token
         ]);
         
           

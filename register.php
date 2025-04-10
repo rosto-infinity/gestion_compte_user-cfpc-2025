@@ -1,9 +1,17 @@
 <?php
 session_start();
 require_once('./includes/database.php');
-require_once('./includes/functions.php');
 
+$chiffres = range(0, 9); // Crée un tableau contenant les chiffres de 0 à 9
+$minuscules = range('a', 'z'); // Crée un tableau contenant les lettres minuscules de a à z
+echo '<pre>';
+print_r($chiffres);
+echo '</pre>';
+echo '<pre>';
 
+print_r($nimuscules);
+echo '</pre>';
+die();
 if (isset($_POST)) {
     $errors = [];
 

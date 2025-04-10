@@ -5,17 +5,19 @@ require_once('./includes/database.php');
 $chiffres = range(0, 9); // 1-Crée un tableau contenant les chiffres de 0 à 9
 $minuscules = range('a', 'z'); // 2-Crée un tableau contenant les lettres minuscules de a à z
 $majuscules = range('A', 'Z'); // 3-Crée un tableau contenant les lettres majuscules de A à Z
-echo '<pre>';
-print_r($chiffres);
-echo '</pre>';
+$alphanum= array_merge($chiffres, $minuscules, $majuscules); // 4-Fusionne les tableaux pour créer un tableau alphanumérique
 
 echo '<pre>';
-print_r($minuscules);
+print_r($alphanum);
 echo '</pre>';
 
-echo '<pre>';
-print_r($majuscules);   
-echo '</pre>';
+// echo '<pre>';
+// print_r($minuscules);
+// echo '</pre>';
+
+// echo '<pre>';
+// print_r($majuscules);   
+// echo '</pre>';
 die();
 if (isset($_POST)) {
     $errors = [];

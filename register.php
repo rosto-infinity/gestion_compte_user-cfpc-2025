@@ -5,10 +5,6 @@ require_once('./includes/database.php');
 // $chiffres = range(0, 9); // 1-Crée un tableau contenant les chiffres de 0 à 9
 // $minuscules = range('a', 'z'); // 2-Crée un tableau contenant les lettres minuscules de a à z
 // $majuscules = range('A', 'Z'); // 3-Crée un tableau contenant les lettres majuscules de A à Z
-$alphanum= array_merge(range(0, 9), range('a', 'z'), range('A', 'Z')); 
-$alphanumString = implode('', $alphanum); 
-$token1 =str_shuffle(str_repeat($alphanumString,100));
-$token2=substr($token1, 0, 100);
 
 echo '<pre>';
 print_r($token2);

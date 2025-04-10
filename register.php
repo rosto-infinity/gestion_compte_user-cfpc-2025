@@ -1,30 +1,32 @@
 <?php
 session_start();
 require_once('./includes/database.php');
-  // 1Chiffres de 0 à 9
-  $chiffres = range(0, 9);
-       echo "<pre>";
-        print_r($chiffres);
-      echo "</pre>";  
-  // 2-Lettres minuscules de a à z
-  $minuscules = range('a', 'z');
-  echo "<pre>";
-  print_r($minuscules);
-echo "</pre>";
-  // 3-Lettres majuscules de A à Z
-  $majuscules = range('A', 'Z');
-  echo "<pre>";
-  print_r($majuscules);
-echo "</pre>";
+//   // 1Chiffres de 0 à 9
+//   $chiffres = range(0, 9);
+//        echo "<pre>";
+//         print_r($chiffres);
+//       echo "</pre>";  
+//   // 2-Lettres minuscules de a à z
+//   $minuscules = range('a', 'z');
+//   echo "<pre>";
+//   print_r($minuscules);
+// echo "</pre>";
+//   // 3-Lettres majuscules de A à Z
+//   $majuscules = range('A', 'Z');
+//   echo "<pre>";
+//   print_r($majuscules);
+// echo "</pre>";
   // 4-Combiner tous les éléments
-  $resultat = array_merge($chiffres, $minuscules, $majuscules);
+//   $resultat = array_merge($chiffres, $minuscules, $majuscules);
   
-  // 5-Afficher le résultat
-  echo "<pre>";
-  print_r($resultat);
-  echo "</pre>";
+//   // 5-Afficher le résultat
+//   echo "<pre>";
+//   print_r($resultat);
+//   echo "</pre>";
 
-
+/**
+ * La fonction array_merge() en PHP a pour rôle de fusionner un ou plusieurs tableaux
+ */
   $resultat2 = array_merge(range(0, 9), range('a', 'z'), range('A', 'Z'));
   echo "<pre>";
   print_r($resultat2);

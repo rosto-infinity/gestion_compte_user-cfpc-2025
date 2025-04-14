@@ -58,7 +58,7 @@ if (isset($_POST)) {
         $email = $_POST['email'];
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
       
-        // Appelle la fonction generateToken pour générer un token aléatoire de 100 caractères
+        // 28-Appelle la fonction generateToken pour générer un token aléatoire de 100 caractères
         $token=generateToken(100);
         $query = $pdo->prepare("INSERT INTO users (username, email, password, confirmation_token) VALUES (:username, :email, :password,:confirmation_token)");
         

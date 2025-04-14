@@ -35,7 +35,7 @@ if (session_status() == PHP_SESSION_NONE) {
          foreach($_SESSION['flash'] as $type => $message){
               echo '<div class="alert alert-'.$type.'">'.$message.'</div>';
          }
-         // Display the message and remove it from the session
+         // 23-Display the message and remove it from the session
         unset($_SESSION['flash']);
    }
 

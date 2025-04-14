@@ -45,7 +45,7 @@ if (isset($_POST)) {
         }
     }
 
-    // Password Validation
+    // 27-Password Validation
     if (empty($_POST['password']) || !preg_match("/[a-zA-Z0-9_]{2,}$/", $_POST['password'])) {
         $errors['password'] = "Le mot de passe doit contenir au moins 2 caractères";
     } elseif ($_POST['password'] !== $_POST['confirm_password']) {

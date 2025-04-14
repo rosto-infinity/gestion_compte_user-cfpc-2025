@@ -79,7 +79,7 @@ if (isset($_POST)) {
         $message = "Afin de confirmer votre compte, merci de cliquer sur ce lien : 
         <a href='$link'>Confirmer mon compte</a>";
     
-        // Envoi de l'e-mail en utilisant le format HTML
+        // 29-Envoi de l'e-mail en utilisant le format HTML
         $headers = "MIME-Version: 1.0" . "\r\n";
         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
         mail($mail, $subject, $message, $headers);

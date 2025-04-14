@@ -84,7 +84,7 @@ if (isset($_POST)) {
         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
         mail($mail, $subject, $message, $headers);
 
-        // Envoi d'un message de succès vers la page de connexion
+        // 30-Envoi d'un message de succès vers la page de connexion
         $_SESSION['flash']['success'] = "Un email de confirmation a été envoyé à $mail. Veuillez vérifier votre boîte de réception afin de confirmer votre compte.";
         header('Location: login.php');
         exit();

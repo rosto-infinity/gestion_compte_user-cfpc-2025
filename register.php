@@ -71,13 +71,14 @@ if (isset($_POST)) {
         ]);
 
         $userId=$pdo->lastInsertId();
-        $mail = $_POST['email'];
-        $subject = "Confirmation du compte";
-        $link = "localhost/php-2025/cours-php/gestion_compte_user-cfpc-2025/confirm?id=$userId&token=$token";
+      
+        $mail =$_POST['email'];
+        $subject ="Confirmation du compte";
+        $link ="http://localhost/php-2025/cours-php/gestion_compte_user-cfpc-2025/confirm?id=$userId&token=$token";
 
         $message = "Afin de confirmer votre compte, merci de cliquer sur ce lien : 
         <a href='$link'>Confirmer mon compte</a>";
-
+    
         // Envoi de l'e-mail en utilisant le format HTML
         $headers = "MIME-Version: 1.0" . "\r\n";
         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";

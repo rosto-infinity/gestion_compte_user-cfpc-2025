@@ -30,6 +30,7 @@ if (isset($_POST)) {
         $query->execute([$_POST['username']]);
         if ($query->fetch(PDO::FETCH_ASSOC)) {
             $errors['username'] = "Ce nom d'utilisateur existe déjà";
+            
         }
     }
 
@@ -81,7 +82,12 @@ if (isset($_POST)) {
         $headers = "MIME-Version: 1.0" . "\r\n";
         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
         mail($mail, $subject, $message, $headers);
-        
+
+        // Envoi d'un message de succès vers la page de connexion
+        $_SESSION['flash']['success'] = "Un email de confirmation a été envoyé à $mail. Veuillez vérifier votre boîte de réception afin de confirmer votre compte.";
+        header('Location: login.php');
+        exit();
+    
     }
 }
 ?>

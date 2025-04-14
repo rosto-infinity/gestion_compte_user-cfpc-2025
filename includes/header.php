@@ -1,5 +1,4 @@
 <?php
-// session_start();
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
@@ -31,4 +30,13 @@ if (session_status() == PHP_SESSION_NONE) {
     <span>
         <h3>Gestion des comptes utilisateurs</h3>
     </span>
-   
+   <?php
+   if(isset($_SESSION['flash'])){
+         foreach($_SESSION['flash'] as $type => $message){
+              echo '<div class="alert alert-'.$type.'">'.$message.'</div>';
+         }
+         // Display the message and remove it from the session
+        unset($_SESSION['flash']);
+   }
+
+   ?>

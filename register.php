@@ -22,7 +22,7 @@ require_once('./includes/functions.php');
 if (isset($_POST)) {
     $errors = [];
 
-    // Username Validation
+    // -24-Username Validation
     if (empty($_POST['username']) || !preg_match("/^[a-zA-Z0-9_]{3,20}$/", $_POST['username'])) {
         $errors['username'] = "Veuillez entrer un nom d'utilisateur valide (3-20 caractères)";
     } else {

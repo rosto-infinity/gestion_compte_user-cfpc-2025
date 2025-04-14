@@ -34,7 +34,7 @@ if (isset($_POST)) {
         }
     }
 
-    // Email Validation
+    // 26-Email Validation
     if (empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
         $errors['email'] = "Veuillez entrer une adresse email valide";
     } else {

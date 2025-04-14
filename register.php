@@ -52,7 +52,7 @@ if (isset($_POST)) {
         $errors['confirm_password'] = "Les mots de passe ne correspondent pas";
     }
 
-    // Insert into Database
+    // 27-Insert into Database
     if (empty($errors)) {
         $username = $_POST['username'];
         $email = $_POST['email'];

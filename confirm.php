@@ -22,7 +22,7 @@ if($user && $user['confirmation_token'] == $token){
     $_SESSION['flash']['success'] = "Votre compte a été confirmé avec succès !";
     // 17-Set the session variable to indicate that the user is logged in
     $_SESSION['auth']= $user; 
-    // 18-Redirect to the login page with a success message
+    // 18--Redirect to the login page with a success message
     header('Location: login.php');  
 }else{
     $_SESSION['flash']['error'] = "Ce compte n'existe pas ou le lien de confirmation est invalide.";

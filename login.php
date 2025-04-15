@@ -4,13 +4,15 @@ require_once './includes/database.php';
 
 if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST['password'])) 
 {
+    // 1-Check if the user is already logged in
     $sql ="SELECT * FROM users WHERE (username = :username OR email = :username ) AND confirmed_at IS NOT NULL";
     $query = $pdo->prepare($sql);
     $query->execute([
         'username' => $_POST['username'],
     ]);
+    
     $user = $query->fetch(PDO::FETCH_ASSOC);
-
+// Verifier si l'utilisateur existe et si le mot de passe est correct
     if($user && password_verify($_POST['password'], $user['password'])) {
         $_SESSION['auth'] = $user;
         $_SESSION['flash']['success'] = "Vous êtes connecté avec succès !";

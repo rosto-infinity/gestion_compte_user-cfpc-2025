@@ -14,7 +14,9 @@ if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST['password']))
     $user = $query->fetch(PDO::FETCH_ASSOC);
 // Verifier si l'utilisateur existe et si le mot de passe est correct
     if($user && password_verify($_POST['password'], $user['password'])) {
+       // 2-Check if the user is already logged in
         $_SESSION['auth'] = $user;
+        // 3-Message de succès
         $_SESSION['flash']['success'] = "Vous êtes connecté avec succès !";
         header('Location: index.php');
         exit();

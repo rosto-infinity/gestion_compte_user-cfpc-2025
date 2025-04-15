@@ -22,7 +22,7 @@ if($user && $user['confirmation_token'] == $token){
     $_SESSION['flash']['success'] = "Votre compte a été confirmé avec succès !";
     // 17--Enregistrer l'utilisateur dans la Variable de session qui a pour key 'auth'
     $_SESSION['auth']= $user; 
-    // 18--RRediriger vers la page de connexion avec un message de succès
+    // 18--Rediriger vers la page de connexion avec un message de succès
     header('Location: login.php');  
 }else{
   // 16-S l'utilisateur n'existe pas ou le lien de confirmation est invalide, rediriger vers la page de connexion avec un message d'erreur

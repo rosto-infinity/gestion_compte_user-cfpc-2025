@@ -25,9 +25,9 @@ if($user && $user['confirmation_token'] == $token){
     // 18--Rediriger vers la page de connexion avec un message de succès
     header('Location: login.php');  
 }else{
-  // 16-Si l'utilisateur n'existe pas ou le lien de confirmation est invalide, rediriger vers la page de connexion avec un message d'erreur
+  // 16--Si l'utilisateur n'existe pas ou le lien de confirmation est invalide, rediriger vers la page de connexion avec un message d'erreur
     $_SESSION['flash']['error'] = "Ce compte n'existe pas ou le lien de confirmation est invalide.";
-    header('Location: login.php');  
+    header('Location: register.php');  
 }
 
 

@@ -76,7 +76,6 @@ if (isset($_POST)) {
         $subject ="Confirmation du compte";
         $link ="http://localhost/php-2025/cours-php/gestion_compte_user-cfpc-2025/confirm?id=$userId&token=$token";
         
-        $link ="http://localhost/cours-cfpc-php-2025/gestion_compte_user-cfpc-2025/gestion_compte_user-cfpc-2025/register";
 
 
         $message = "Afin de confirmer votre compte, merci de cliquer sur ce lien : 

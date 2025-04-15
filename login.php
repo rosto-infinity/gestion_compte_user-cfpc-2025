@@ -1,6 +1,26 @@
 <?php
 session_start();
 require_once './includes/database.php';
+
+if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST['password'])) 
+{
+    $sql ="SELECT * FROM users WHERE (username = :username OR email = :username ) AND confirmed_at IS NOT NULL";
+    $query = $pdo->prepare($sql);
+    $query->execute([
+        'username' => $_POST['username'],
+    ]);
+    $user = $query->fetch(PDO::FETCH_ASSOC);
+
+    if($user && password_verify($_POST['password'], $user['password'])) {
+        $_SESSION['auth'] = $user;
+        $_SESSION['flash']['success'] = "Vous êtes connecté avec succès !";
+        header('Location: index.php');
+        exit();
+    } else {
+        $_SESSION['flash']['error'] ="Nom d'utilisateur ou mot de passe incorrect.";
+    }
+}
+
  ?>
 <?php require_once './includes/header.php'; ?>
 <div class=" content">

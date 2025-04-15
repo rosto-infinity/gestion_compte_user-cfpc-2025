@@ -20,9 +20,13 @@ if (session_status() == PHP_SESSION_NONE) {
         </div>
         <nav>
             <ul>
-                 <li><a id="gcu" href="logout.php">Se deconnecter</a></li>
-                <li><a href="register.php">S'inscrire</a></li>
-                <li><a href="login.php">Se connecter</a></li>
+                <?php if(isset($_SESSION['auth']))  :?>
+                    <li><a id="gcu" href="logout.php">Se deconnecter</a></li>
+                 <?php else :?>
+                    <li><a href="register.php">S'inscrire</a></li>
+                    <li><a href="login.php">Se connecter</a></li>
+                <?php endif?>
+                
             </ul>
         </nav>
 
